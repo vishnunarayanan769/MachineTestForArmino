@@ -1,0 +1,38 @@
+<header class="container">
+    <div class="row">
+        <div class="col">
+            <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+                <a class="navbar-brand" href="/">Home</a>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/orders">Orders<span class="sr-only">(current)</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="d-flex justify-content-end">
+
+                </div>
+                <div class="dropdown show">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{#if user.loggedIn}}
+                        {{user.user.Name}}
+                        {{else}}
+                        Account
+                        {{/if}}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        {{#if user.loggedIn}}
+                        <a class="dropdown-item" href="/logout">Logout</a>
+                        {{else}}
+                        <a class="dropdown-item" href="/login">Login</a>
+                        <a class="dropdown-item" href="/create-account">Create account</a>
+                        {{/if}}
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>

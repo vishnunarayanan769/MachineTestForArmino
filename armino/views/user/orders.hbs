@@ -1,0 +1,98 @@
+<section>
+    <div class="container mt-3">
+        <!-- Order section START -->
+        <div class="row">
+            <div class="col">
+                
+                <h4>Total of ({{products.count}}) items</h4>
+               
+            </div>
+        </div>
+        <!--Product section START-->
+        <div class="row mt-2">
+            <div class="col-6">
+                {{#each products}}
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="/images/product-image/{{this.product._id}}.jpg" class="card-img" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{this.product.ProductName}}</h5>
+                                <p class="card-text">{{this.product.HotelName}}</p>
+                                <div class="row">
+                                    <div class="col"><span class="card-text">${{this.product.ProductPrice}}</sapn> x <span class="card-text" id="quantity">{{this.quantity}}
+                                                </sapn>=<span class="card-text">2.350</sapn>KD</div>
+                                    <div class="col d-flex justify-content-end">
+                                        <button class="btn btn-secondary btn-sm mr-1" onclick="changeQuantity('{{this._id}}','{{this.product._id}}',-1,'{{../user}}')">
+                                            -
+                                        </button>
+                                        
+                                        <span id="{{this.product._id}}">{{this.quantity}}</span>
+                                        
+                                        <button class="btn btn-secondary btn-sm ml-1" onclick="changeQuantity('{{this._id}}','{{this.product._id}}',1,'{{../user}}')">
+                                            +
+                                        </button></div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            <!--Product section END-->
+
+            <!--Checkout section START -->
+            <div class="col-6 d-flex align-items-end flex-column ">
+                <div class="p-2"><a class="btn btn-primary">Back to shops</a></div>
+                <div class="p-2">
+                    <div class="card text-right" style="width: 25rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Sub Total( {{products.count}} items) : KD<span id="total">{{total.total}}</span></h5>
+                            <p class="card-text">Promo discount : KD 2.0
+                            </p>
+                            <p class="card-text">Total : KD 8.35
+                            </p>
+                            <div class="text-center">
+                                <a href="#" class="btn btn-primary">Checkout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Checkout section END -->
+        </div>
+
+        <!-- Order section END -->
+
+        <!--More products section START -->
+        <div class="row mt-5">
+            <div class="col">
+                <h4>You may also like</h4>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col">
+                <div class="owl-carousel">
+                    {{#each allProducts}}
+                    <div>
+                        <div class="card text-center" style="width: 18rem;">
+                            <div class="row m-1">
+                                <div class="col"><img class="card-img-top" style=""
+                                        src="/images/product-image/{{this._id}}.jpg" alt="Card image cap"></div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{this.ProductName}}</h5>
+                                <p class="card-text">${{this.ProductPrice}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        <!--More products section END -->
+    </div>
+</section>

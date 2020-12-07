@@ -1,0 +1,32 @@
+<div class="container">
+    <div style="text-align: center;">
+        <h3>Add products</h3>
+    </div>
+    <form action="/admin/add-product" method="POST" enctype="multipart/form-data" class="p-5">
+        <div class="form-group">
+            <label for="">Product name</label>
+            <input type="text" class="form-control" id="productName" name="ProductName"
+                placeholder="Enter Product name">
+        </div>
+        <div class="form-group">
+            <label for="">Hotel name</label>
+            <input type="text" class="form-control" id="hotelName" name="HotelName"
+                placeholder="Enter hotel name">
+        </div>
+        <div class="form-group">
+            <label for="">Category</label>
+            <input type="text" class="form-control" id="productCategory" name="ProductCategory"
+                placeholder="Enter category">
+        </div>
+        <div class="form-group">
+            <label for="">Price</label>
+            <input type="number" class="form-control" id="productPrice" name="ProductPrice" placeholder="Enter price">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlFile1">Example file input</label>
+            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="ProductImage">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
